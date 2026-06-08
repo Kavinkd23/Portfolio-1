@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kavin Duraisamy | Environmental Sustainability Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a2a;
+    --forest-mid: #2d5a40;
+    --forest-light: #3d7a57;
+    --sage: #7aab8a;
+    --mint: #b8d9c3;
+    --cream: #f5f0e8;
+    --sand: #e8dfc8;
+    --warm-white: #faf8f3;
+    --charcoal: #1c1c1a;
+    --text-muted: #5a6650;
+    --accent: #c17f3c;
+    --accent-light: #e8b87a;
+    --cursor-size: 12px;
+    --cursor-follower-size: 36px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* Custom Cursor */
+  #cursor {
+    position: fixed;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background: var(--forest);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  }
+
+  #cursor-follower {
+    position: fixed;
+    width: var(--cursor-follower-size);
+    height: var(--cursor-follower-size);
+    border: 1.5px solid var(--forest-light);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: left 0.12s ease, top 0.12s ease, width 0.25s ease, height 0.25s ease, opacity 0.2s;
+  }
+
+  body:has(a:hover) #cursor,
+  body:has(button:hover) #cursor { background: var(--accent); width: 8px; height: 8px; }
+  body:has(a:hover) #cursor-follower,
+  body:has(button:hover) #cursor-follower { width: 50px; height: 50px; border-color: var(--accent); }
+
+  @media (max-width: 768px) {
+    body { cursor: auto; }
+    #cursor, #cursor-follower { display: none; }
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(61, 122, 87, 0.12);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--forest);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--forest); }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-toggle span {
+    width: 24px;
+    height: 1.5px;
+    background: var(--forest);
+    transition: all 0.3s;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--cream);
+      padding: 1.5rem;
+      flex-direction: column;
+      gap: 1.2rem;
+      border-bottom: 1px solid rgba(61, 122, 87, 0.15);
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: flex; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 7rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--forest);
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(6rem, 18vw, 22rem);
+    color: rgba(255,255,255,0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(184, 217, 195, 0.15);
+    border: 1px solid rgba(122, 171, 138, 0.3);
+    color: var(--mint);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--sage);
+    border-radius: 50%;
+  }
+
+  .hero-content { text-align: center; position: relative; z-index: 2; max-width: 800px; }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 0.95;
+    color: var(--cream);
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--accent-light); }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    color: var(--sage);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .hero-links a {
+    font-size: 0.8rem;
+    color: var(--mint);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .hero-links a:hover { opacity: 1; }
+
+  .hero-links .sep { color: rgba(184,217,195,0.25); }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--warm-white);
+    padding: 0.85rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-primary:hover { background: var(--accent-light); color: var(--forest); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--mint);
+    padding: 0.85rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    border: 1px solid rgba(184,217,195,0.3);
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { background: rgba(184,217,195,0.1); border-color: var(--sage); }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(122, 171, 138, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(122,171,138,0.5), transparent);
+    animation: scrollLine 1.8s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0% { opacity: 1; transform: scaleY(0); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+  }
+
+  /* Sections */
+  section { padding: 6rem 3rem; }
+  @media (max-width: 768px) { section { padding: 4rem 1.5rem; } }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--forest-light);
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+    color: var(--forest);
+    letter-spacing: -0.025em;
+    margin-bottom: 3rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--forest-light); }
+
+  /* About */
+  .about { background: var(--cream); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #3a3a35;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-text strong { color: var(--forest); font-weight: 600; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat-card {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .stat-card .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    color: var(--accent-light);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-card .label { font-size: 0.8rem; color: var(--sage); line-height: 1.4; }
+
+  .languages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(61,122,87,0.12);
+    font-size: 0.9rem;
+  }
+
+  .lang-row .lang-name { font-weight: 500; color: var(--forest); }
+  .lang-row .lang-level { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
+
+  .memberships {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .membership-tag {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(61, 122, 87, 0.06);
+    border-radius: 10px;
+    border-left: 3px solid var(--sage);
+  }
+
+  .membership-tag .abbr {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--forest);
+    min-width: 50px;
+    letter-spacing: 0.05em;
+  }
+
+  .membership-tag .full { font-size: 0.82rem; color: var(--text-muted); }
+
+  /* Skills */
+  .skills { background: var(--warm-white); }
+
+  .skills-container { max-width: 1200px; margin: 0 auto; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-category {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 1.75rem;
+    border: 1px solid rgba(61,122,87,0.1);
+  }
+
+  .skill-category h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background: white;
+    color: var(--charcoal);
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid rgba(61,122,87,0.15);
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .tag:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+
+  /* Experience */
+  .experience { background: var(--forest); }
+
+  .experience .section-label { color: var(--sage); }
+  .experience .section-label::before { background: var(--sage); }
+  .experience .section-title { color: var(--cream); }
+  .experience .section-title em { color: var(--accent-light); }
+
+  .timeline { max-width: 800px; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+  }
+
+  @media (max-width: 600px) {
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--sage);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding-top: 0.15rem;
+    line-height: 1.5;
+  }
+
+  .timeline-content {
+    border-left: 1px solid rgba(122,171,138,0.2);
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -4.5px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .timeline-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.15rem;
+  }
+
+  .timeline-org {
+    font-size: 0.82rem;
+    color: var(--sage);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .timeline-bullets li {
+    font-size: 0.88rem;
+    color: rgba(184,217,195,0.75);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .timeline-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
+  }
+
+  /* Projects */
+  .projects { background: var(--sand); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    background: var(--warm-white);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(61,122,87,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(26,58,42,0.12); }
+
+  .project-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+
+  .project-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: rgba(61,122,87,0.1);
+    color: var(--forest-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .project-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* Education */
+  .education { background: var(--cream); }
+
+  .edu-list { max-width: 800px; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .edu-item {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid rgba(61,122,87,0.1);
+    align-items: flex-start;
+  }
+
+  @media (max-width: 600px) { .edu-item { flex-direction: column; gap: 0.75rem; padding: 1.2rem 1.5rem; } }
+
+  .edu-year {
+    font-size: 0.75rem;
+    color: var(--forest-light);
+    font-weight: 600;
+    min-width: 80px;
+    padding-top: 0.15rem;
+  }
+
+  .edu-degree {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--forest);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-inst { font-size: 0.83rem; color: var(--text-muted); font-style: italic; }
+
+  /* Publications */
+  .publications { background: var(--warm-white); }
+
+  .pub-list { max-width: 900px; display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .pub-item {
+    padding: 1.25rem 1.75rem;
+    border-left: 3px solid var(--sage);
+    background: var(--cream);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .pub-meta {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--forest-light);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-title { font-size: 0.88rem; color: var(--charcoal); line-height: 1.6; }
+
+  /* Contact */
+  .contact { background: var(--forest); text-align: center; }
+
+  .contact .section-label { justify-content: center; }
+  .contact .section-label::before { display: none; }
+  .contact .section-title { color: var(--cream); text-align: center; }
+  .contact .section-title em { color: var(--accent-light); }
+
+  .contact-desc {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1rem;
+    color: var(--sage);
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.75rem;
+    border: 1px solid rgba(184,217,195,0.25);
+    border-radius: 100px;
+    color: var(--mint);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover { background: rgba(184,217,195,0.1); border-color: var(--sage); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: #111c16;
+    font-size: 0.78rem;
+    color: rgba(122,171,138,0.45);
+    letter-spacing: 0.08em;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Profile Photo */
+  .profile-photo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-photo-card {
+    width: 220px;
+    height: 260px;
+    border-radius: 20px;
+    background: var(--forest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(122,171,138,0.2);
+    flex-shrink: 0;
+  }
+
+  .profile-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-initials {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(122,171,138,0.15);
+    border: 2px dashed rgba(122,171,138,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--sage);
+  }
+
+  .photo-upload-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .photo-upload-btn:hover { background: var(--accent-light); color: var(--forest); }
+
+  .photo-change-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(26,58,42,0.85);
+    color: var(--sage);
+    border: 1px solid rgba(122,171,138,0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .photo-change-btn:hover { background: var(--forest); color: var(--cream); }
+
+  .profile-name-tag {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .profile-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--forest);
+    display: block;
+  }
+
+  .profile-title-tag {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  /* Gallery Section */
+  .gallery { background: var(--forest); }
+  .gallery .section-label { color: var(--sage); }
+  .gallery .section-label::before { background: var(--sage); }
+  .gallery .section-title { color: var(--cream); }
+  .gallery .section-title em { color: var(--accent-light); }
+
+  .gallery-filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(122,171,138,0.2);
+    color: var(--sage);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: rgba(255,255,255,0.05);
+    border: 1.5px dashed rgba(122,171,138,0.2);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gallery-item:hover { transform: scale(1.02); border-color: rgba(122,171,138,0.5); }
+
+  .gallery-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .gallery-item .item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,58,42,0.85) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.25s;
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.85rem;
+  }
+
+  .gallery-item:hover .item-overlay { opacity: 1; }
+
+  .overlay-label {
+    font-size: 0.75rem;
+    color: var(--mint);
+    font-weight: 500;
+  }
+
+  .gallery-item .add-placeholder {
+    text-align: center;
+    color: rgba(122,171,138,0.5);
+  }
+
+  .add-placeholder .plus-icon {
+    font-size: 2rem;
+    line-height: 1;
+    color: rgba(122,171,138,0.35);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .add-placeholder span {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  .add-photo-card {
+    border: 2px dashed rgba(193,127,60,0.4) !important;
+    cursor: pointer !important;
+  }
+
+  .add-photo-card:hover {
+    border-color: var(--accent) !important;
+    background: rgba(193,127,60,0.06) !important;
+  }
+
+  .gallery-cat-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(26,58,42,0.8);
+    color: var(--sage);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .gallery-item .remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background: rgba(26,58,42,0.85);
+    color: var(--sage);
+    border: none;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: background 0.2s;
+    line-height: 1;
+  }
+
+  .gallery-item:hover .remove-btn { display: flex; }
+  .remove-btn:hover { background: #c0392b; color: white; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,20,14,0.95);
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(122,171,138,0.15);
+    border: 1px solid rgba(122,171,138,0.3);
+    color: var(--sage);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-info {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--sage);
+    font-size: 0.82rem;
+  }
+
+  .gallery-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: rgba(122,171,138,0.4);
+    font-size: 0.9rem;
+  }
+
+  /* Upload modal */
+  .upload-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,20,14,0.9);
+    z-index: 9100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .upload-modal.open { display: flex; }
+
+  .upload-modal-inner {
+    background: #1e3d2c;
+    border: 1px solid rgba(122,171,138,0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .upload-modal-inner h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+  }
+
+  .upload-modal-inner label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--sage);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .upload-modal-inner select,
+  .upload-modal-inner input[type="text"] {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(122,171,138,0.2);
+    color: var(--cream);
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .upload-modal-inner select:focus,
+  .upload-modal-inner input:focus { border-color: var(--sage); }
+
+  .upload-modal-inner select option { background: #1a3a2a; }
+
+  .upload-drop-zone {
+    border: 2px dashed rgba(122,171,138,0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .upload-drop-zone:hover { border-color: var(--sage); background: rgba(122,171,138,0.05); }
+
+  .upload-drop-zone .drop-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .upload-drop-zone p { font-size: 0.82rem; color: var(--sage); }
+  .upload-drop-zone span { font-size: 0.72rem; color: rgba(122,171,138,0.5); }
+
+  .upload-preview-strip {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+
+  .upload-preview-strip img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(122,171,138,0.2);
+  }
+
+  .modal-btns {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+  }
+
+  .modal-btn-cancel {
+    background: transparent;
+    border: 1px solid rgba(122,171,138,0.25);
+    color: var(--sage);
+    padding: 0.65rem 1.5rem;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .modal-btn-cancel:hover { background: rgba(122,171,138,0.08); }
+
+  .modal-btn-add {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 0.65rem 1.75rem;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .modal-btn-add:hover { background: var(--accent-light); color: var(--forest); }
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">KD</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-text" aria-hidden="true">KD</div>
+  <div class="hero-content">
+    <div class="hero-badge">Edinburgh, UK · Environmental Sustainability</div>
+    <h1>Kavin<br><em>Duraisamy</em></h1>
+    <p class="hero-sub">LCA Specialist · ESG Analyst · Net Zero Strategist</p>
+    <div class="hero-links">
+      <a href="mailto:kavin.kd23@gmail.com">✉ kavin.kd23@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="tel:+447349937997">+44 7349 937997</a>
+      <span class="sep">·</span>
+      <a href="https://linkedin.com/in/kavindk" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#about" class="btn-outline">View Profile</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Turning science<br>into <em>sustainability</em><br>action</h2>
+      <p>Environmental Sustainability professional with hands-on expertise in <strong>life cycle assessment (LCA)</strong>, embodied carbon modelling, and ESG reporting. My dissertation research applied LCA and Material Flow Analysis to retail supply chains, identifying evidence-based pathways to reduce emissions and strengthen circularity.</p>
+      <p>Experienced in <strong>Scope 1–3 carbon accounting</strong>, waste management, and net zero strategy. Co-developer of the Revive app — a waste-to-reward platform — and Decision Committee Member for the <strong>World Register of Marine Species (WoRMS)</strong>.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="num">24+</div>
+          <div class="label">Grants, Publications &amp; Recognitions</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">5+</div>
+          <div class="label">Years Environmental Research Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">3</div>
+          <div class="label">Professional Memberships</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">7</div>
+          <div class="label">Conference Posters &amp; Publications</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay: 0.15s;">
+      <!-- PROFILE PHOTO -->
+      <div class="profile-photo-wrap">
+        <div class="profile-photo-card" id="profilePhotoCard">
+          <input type="file" id="profilePhotoInput" accept="image/*" style="display:none">
+          <div class="profile-placeholder" id="profilePlaceholder">
+            <div class="profile-initials">KD</div>
+            <button class="photo-upload-btn" onclick="document.getElementById('profilePhotoInput').click()">+ Add Photo</button>
+          </div>
+          <img id="profileImg" src="" alt="Kavin Duraisamy" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:20px;">
+          <button class="photo-change-btn" id="photoChangeBtn" style="display:none" onclick="document.getElementById('profilePhotoInput').click()">Change Photo</button>
+        </div>
+        <div class="profile-name-tag">
+          <span class="profile-name">Kavin Duraisamy</span>
+          <span class="profile-title-tag">Environmental Sustainability Professional</span>
+        </div>
+      </div>
+      <div class="languages" style="margin-top:2rem;">
+        <h3 style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--forest-light);font-weight:600;margin-bottom:0.5rem;">Languages</h3>
+        <div class="lang-row"><span class="lang-name">Tamil</span><span class="lang-level">C2 — Native</span></div>
+        <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">C2 — Fluent</span></div>
+        <div class="lang-row"><span class="lang-name">Malayalam</span><span class="lang-level">C2 — Fluent</span></div>
+        <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-level">C1 — Advanced</span></div>
+      </div>
+      <div class="memberships" style="margin-top:2.5rem;">
+        <h3 style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--forest-light);font-weight:600;margin-bottom:0.5rem;">Professional Memberships</h3>
+        <div class="membership-tag">
+          <span class="abbr">CIEEM</span>
+          <span class="full">Chartered Institute of Ecology &amp; Environmental Management</span>
+        </div>
+        <div class="membership-tag">
+          <span class="abbr">CIWM</span>
+          <span class="full">Chartered Institution of Wastes Management</span>
+        </div>
+        <div class="membership-tag">
+          <span class="abbr">IUCN</span>
+          <span class="full">IUCN World Commission on Protected Areas</span>
+        </div>
+        <div class="membership-tag">
+          <span class="abbr">WoRMS</span>
+          <span class="full">World Register of Marine Species — Decision Committee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="skills-container">
+    <div class="section-label reveal">Technical Expertise</div>
+    <h2 class="section-title reveal">Skills &amp;<br><em>Frameworks</em></h2>
+    <div class="skills-grid reveal">
+      <div class="skill-category">
+        <h3>🌿 LCA &amp; Carbon</h3>
+        <div class="skill-tags">
+          <span class="tag">SimaPro</span><span class="tag">OpenLCA</span><span class="tag">One Click LCA</span><span class="tag">Embodied Carbon</span><span class="tag">Whole Life Carbon</span><span class="tag">EPDs</span><span class="tag">Material Flow Analysis</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>📊 ESG &amp; Reporting</h3>
+        <div class="skill-tags">
+          <span class="tag">GHG Protocol</span><span class="tag">SBTi</span><span class="tag">TCFD</span><span class="tag">ISO 14001</span><span class="tag">ISO 14064</span><span class="tag">Scope 1–3</span><span class="tag">TNFD</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>🏗️ Built Environment</h3>
+        <div class="skill-tags">
+          <span class="tag">BREEAM</span><span class="tag">LETI</span><span class="tag">RICS</span><span class="tag">PAS 2080</span><span class="tag">Passivhaus</span><span class="tag">Retrofit Assessment</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>🗺️ Data &amp; GIS</h3>
+        <div class="skill-tags">
+          <span class="tag">ArcGIS</span><span class="tag">QGIS</span><span class="tag">Power BI</span><span class="tag">R Studio</span><span class="tag">Excel</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>🌍 Environmental Practice</h3>
+        <div class="skill-tags">
+          <span class="tag">Biodiversity Net Gain</span><span class="tag">Circular Economy</span><span class="tag">Waste Minimisation</span><span class="tag">Supply Chain Sustainability</span><span class="tag">Environmental Monitoring</span><span class="tag">EIA</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>🤝 Soft Skills</h3>
+        <div class="skill-tags">
+          <span class="tag">Stakeholder Engagement</span><span class="tag">Science Communication</span><span class="tag">Project Management</span><span class="tag">Just Transition</span><span class="tag">Social Value</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-label reveal">Professional Journey</div>
+  <h2 class="section-title reveal">Work<br><em>Experience</em></h2>
+  <div class="timeline reveal">
+    <div class="timeline-item">
+      <div class="timeline-date">Jul–Aug 2025</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Sustainable Construction Intern</div>
+        <div class="timeline-org">Green Building Solutions Summer School · Vienna, Austria</div>
+        <ul class="timeline-bullets">
+          <li>Trained in sustainable construction, renewable energy systems, and circular economy principles.</li>
+          <li>Worked with international peers to design carbon-neutral communities using Passivhaus standards.</li>
+          <li>Gained hands-on experience with low-carbon construction and European sustainability standards.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Nov 2023–Jun 2024</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Scientific Assistant</div>
+        <div class="timeline-org">Sathyabama Institute of Science and Technology · India</div>
+        <ul class="timeline-bullets">
+          <li>Conducted environmental research including microplastics analysis and freshwater biodiversity assessments.</li>
+          <li>Contributed to peer-reviewed publications, conference posters, and national environmental monitoring reports.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Ongoing</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Decision Committee Member</div>
+        <div class="timeline-org">World Register of Marine Species (WoRMS)</div>
+        <ul class="timeline-bullets">
+          <li>Contributing to taxonomic decisions and governance of the internationally recognised authoritative reference list of marine species names.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-label reveal">Impact Work</div>
+  <h2 class="section-title reveal">Projects &amp;<br><em>Competitions</em></h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-icon">🏆</div>
+      <div class="project-tag">Award</div>
+      <h3>Uniforce Challenge</h3>
+      <p>Sustainable Impact Finalist · Project Lead · Oct 2025–Jan 2026. Awarded for outstanding contribution to sustainable impact through innovative environmental solutions across a 12-week competitive programme.</p>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">♻️</div>
+      <div class="project-tag">Ongoing</div>
+      <h3>Revive App</h3>
+      <p>Co-Developer. Waste-to-reward mobile platform designed to incentivise sustainable behaviour and improve recycling outcomes at scale.</p>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">🌍</div>
+      <div class="project-tag">Ongoing</div>
+      <h3>Social Innovation Challenge</h3>
+      <p>Project Manager · Scotland. Developing scalable sustainability solutions for communities across Scotland through an 8-week structured innovation programme.</p>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">🛒</div>
+      <div class="project-tag">MSc Dissertation</div>
+      <h3>Insights for Sustainability 2045</h3>
+      <p>LCA &amp; Material Flow Analysis applied to grocery retail supply chains, identifying pathways to reduce emissions and strengthen circularity toward 2045 targets.</p>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">🐟</div>
+      <div class="project-tag">Research</div>
+      <h3>River Moyar Fish Diversity Study</h3>
+      <p>Fish diversity, habitat quality assessment and GIS mapping of River Moyar, Western Ghats — foundational ecological research contributing to regional conservation.</p>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-icon">⚡</div>
+      <div class="project-tag">Event</div>
+      <h3>Sprint Event</h3>
+      <p>Participant · Heriot-Watt University. Rapid innovation sprint applying sustainability thinking to real-world challenges in a competitive team environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <div class="section-label reveal">Academic Background</div>
+  <h2 class="section-title reveal">Education</h2>
+  <div class="edu-list reveal">
+    <div class="edu-item">
+      <div class="edu-year">2025–2026</div>
+      <div>
+        <div class="edu-degree">M.Sc. Environmental Sustainability</div>
+        <div class="edu-inst">Edinburgh Napier University · Scotland, UK</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">Jan–Apr 2024</div>
+      <div>
+        <div class="edu-degree">Certificate in Environmental Impact Assessment</div>
+        <div class="edu-inst">IIT Roorkee · India · 75%</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">Sep 2021</div>
+      <div>
+        <div class="edu-degree">PG Diploma in Biodiversity and Conservation</div>
+        <div class="edu-inst">Kongu Nadu Arts and Science College · India</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2017–2019</div>
+      <div>
+        <div class="edu-degree">M.Sc. Environmental Science</div>
+        <div class="edu-inst">Bharathiar University · India · First Class, 7.6 CGPA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="publications" id="publications">
+  <div class="section-label reveal">Knowledge Contributions</div>
+  <h2 class="section-title reveal">Research &amp;<br><em>Publications</em></h2>
+  <div class="pub-list reveal">
+    <div class="pub-item">
+      <div class="pub-meta">International Book Chapter</div>
+      <div class="pub-title">Dinesh K, Geeji Madathil &amp; Kavin Duraisamy — Mullet Culture in India: Present Status and Future Prospects. Eds. Ichiu Liao &amp; Eduardo Leano.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Conference Poster · 2024</div>
+      <div class="pub-title">Microplastics in Fish — Implications for Human Consumption. Kavin D &amp; Prakash S. SIST-Spinco Biotech, August 2024.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Conference Poster · 2024</div>
+      <div class="pub-title">Bridging Traditions and Ecology: Cultural Community Conservation of Freshwater Fishes.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Conference Poster · 2023</div>
+      <div class="pub-title">Understanding Fishing Practices of Indigenous Communities, Arunachal Pradesh.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Conference Poster · 2023</div>
+      <div class="pub-title">Monitoring Freshwater Fish Population in Moyar River — Long-Term Ecological Observatory.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Contributing Author · Report · 2022</div>
+      <div class="pub-title">NRCD-WII. Barak, Narmada, Periyar, Cauvery, Mahanadi &amp; Godavari Riverscape: Ecological Status and Trends. Wildlife Institute of India.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta">Contributing Author · Report · 2021</div>
+      <div class="pub-title">Johnson et al. Status of Wildlife between Kota Barrage &amp; Jawahar Sagar Dam. Wildlife Institute of India. Rapid Assessment Report 4.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label reveal">Get in Touch</div>
+  <h2 class="section-title reveal">Let's work<br><em>together</em></h2>
+  <p class="contact-desc reveal">Open to sustainability consultancy roles, ESG analyst positions, and collaborations in LCA, net zero strategy, and environmental research. Based in Edinburgh — available UK-wide.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:kavin.kd23@gmail.com" class="contact-link">✉ kavin.kd23@gmail.com</a>
+    <a href="tel:+447349937997" class="contact-link">✆ +44 7349 937997</a>
+    <a href="https://linkedin.com/in/kavindk" target="_blank" class="contact-link">LinkedIn ↗</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-label reveal">Visual Journey</div>
+  <h2 class="section-title reveal">Photo<br><em>Gallery</em></h2>
+
+  <div class="gallery-filters reveal" id="galleryFilters">
+    <button class="filter-btn active" data-filter="all">All Photos</button>
+    <button class="filter-btn" data-filter="headshot">Headshots</button>
+    <button class="filter-btn" data-filter="fieldwork">Fieldwork</button>
+    <button class="filter-btn" data-filter="events">Events</button>
+    <button class="filter-btn" data-filter="other">Other</button>
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid">
+    <!-- Add photo card -->
+    <div class="gallery-item add-photo-card" id="addPhotoBtn" onclick="openUploadModal()">
+      <div class="add-placeholder">
+        <span class="plus-icon">+</span>
+        <span>Add Photos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upload Modal -->
+<div class="upload-modal" id="uploadModal">
+  <div class="upload-modal-inner">
+    <h3>Add Photos</h3>
+
+    <label>Category</label>
+    <select id="uploadCategory">
+      <option value="headshot">Headshot</option>
+      <option value="fieldwork">Fieldwork</option>
+      <option value="events">Events</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label>Caption (optional)</label>
+    <input type="text" id="uploadCaption" placeholder="e.g. Fieldwork at River Moyar, 2023">
+
+    <div class="upload-drop-zone" id="uploadDropZone" onclick="document.getElementById('galleryFileInput').click()">
+      <div class="drop-icon">📷</div>
+      <p>Click to select photos</p>
+      <span>JPG, PNG, WEBP — multiple files supported</span>
+    </div>
+    <input type="file" id="galleryFileInput" accept="image/*" multiple style="display:none">
+
+    <div class="upload-preview-strip" id="uploadPreviewStrip"></div>
+
+    <div class="modal-btns">
+      <button class="modal-btn-cancel" onclick="closeUploadModal()">Cancel</button>
+      <button class="modal-btn-add" onclick="confirmUpload()">Add to Gallery</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<footer>© 2026 Kavin Duraisamy · Edinburgh, Scotland · Environmental Sustainability Professional</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursor-follower');
+  let fx = 0, fy = 0;
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    fx += (e.clientX - fx) * 0.12;
+    fy += (e.clientY - fy) * 0.12;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+  });
+
+  function animateFollower() {
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  // Mobile nav
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // ── Profile Photo ──
+  const profileInput = document.getElementById('profilePhotoInput');
+  const profileImg = document.getElementById('profileImg');
+  const profilePlaceholder = document.getElementById('profilePlaceholder');
+  const photoChangeBtn = document.getElementById('photoChangeBtn');
+
+  profileInput.addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      profileImg.src = e.target.result;
+      profileImg.style.display = 'block';
+      profilePlaceholder.style.display = 'none';
+      photoChangeBtn.style.display = 'flex';
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ── Gallery ──
+  let galleryPhotos = [];
+  let pendingFiles = [];
+  let activeFilter = 'all';
+
+  const categoryLabels = { headshot: 'Headshot', fieldwork: 'Fieldwork', events: 'Events', other: 'Other' };
+
+  function openUploadModal() {
+    pendingFiles = [];
+    document.getElementById('uploadPreviewStrip').innerHTML = '';
+    document.getElementById('uploadCaption').value = '';
+    document.getElementById('uploadModal').classList.add('open');
+  }
+
+  function closeUploadModal() {
+    document.getElementById('uploadModal').classList.remove('open');
+    pendingFiles = [];
+    document.getElementById('uploadPreviewStrip').innerHTML = '';
+  }
+
+  document.getElementById('galleryFileInput').addEventListener('change', function() {
+    const strip = document.getElementById('uploadPreviewStrip');
+    strip.innerHTML = '';
+    pendingFiles = Array.from(this.files);
+    pendingFiles.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        strip.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  // Drag & drop
+  const dropZone = document.getElementById('uploadDropZone');
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.style.borderColor = 'var(--sage)'; });
+  dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = ''; });
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.style.borderColor = '';
+    const dt = e.dataTransfer;
+    if (dt.files.length) {
+      document.getElementById('galleryFileInput').files = dt.files;
+      document.getElementById('galleryFileInput').dispatchEvent(new Event('change'));
+    }
+  });
+
+  function confirmUpload() {
+    if (!pendingFiles.length) { closeUploadModal(); return; }
+    const cat = document.getElementById('uploadCategory').value;
+    const caption = document.getElementById('uploadCaption').value.trim();
+    let loaded = 0;
+    pendingFiles.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        galleryPhotos.push({ src: e.target.result, cat, caption: caption || categoryLabels[cat], name: file.name });
+        loaded++;
+        if (loaded === pendingFiles.length) { renderGallery(); closeUploadModal(); }
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    // Keep add button
+    grid.innerHTML = `<div class="gallery-item add-photo-card" id="addPhotoBtn" onclick="openUploadModal()"><div class="add-placeholder"><span class="plus-icon">+</span><span>Add Photos</span></div></div>`;
+
+    const filtered = activeFilter === 'all' ? galleryPhotos : galleryPhotos.filter(p => p.cat === activeFilter);
+
+    if (filtered.length === 0 && galleryPhotos.length > 0) {
+      const empty = document.createElement('div');
+      empty.className = 'gallery-empty-state';
+      empty.textContent = 'No photos in this category yet.';
+      grid.appendChild(empty);
+      return;
+    }
+
+    filtered.forEach((photo, idx) => {
+      const realIdx = galleryPhotos.indexOf(photo);
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.innerHTML = `
+        <img src="${photo.src}" alt="${photo.caption}" loading="lazy">
+        <span class="gallery-cat-badge">${categoryLabels[photo.cat]}</span>
+        <div class="item-overlay"><span class="overlay-label">${photo.caption}</span></div>
+        <button class="remove-btn" onclick="removePhoto(event,${realIdx})" title="Remove">✕</button>
+      `;
+      item.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-btn')) return;
+        openLightbox(photo);
+      });
+      grid.appendChild(item);
+    });
+  }
+
+  function removePhoto(e, idx) {
+    e.stopPropagation();
+    galleryPhotos.splice(idx, 1);
+    renderGallery();
+  }
+
+  // Filter buttons
+  document.getElementById('galleryFilters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    renderGallery();
+  });
+
+  // Lightbox
+  function openLightbox(photo) {
+    document.getElementById('lightboxImg').src = photo.src;
+    document.getElementById('lightboxInfo').textContent = photo.caption + ' · ' + categoryLabels[photo.cat];
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeUploadModal(); } });
+</script>
+</body>
+</html>
